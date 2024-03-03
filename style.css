@@ -1,21 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:ital,wght@1,300&display=swap');
-/* html,body{
-    height:100px;
-    width:100px;
-} */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 html, body{
     font-family: 'Montserrat', sans-serif;
     font-family: 'Roboto', sans-serif;
-    background-color:rgb(66, 44, 4)
+    background-color:rgb(66, 44, 4);
     }
+
+.text-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
 .box{
+    margin-top:2rem ;
     background-color:rgb(43, 39, 39); 
     width:400px;
-    margin-left:560px;
+    border-radius:1rem ;
 }
+
 .row{
     margin:10px 0;
 }
+
+
 .button{
     padding:10px;
     margin:0 3px;
@@ -26,6 +41,8 @@ html, body{
     cursor:pointer;
     font-size:18px;
 }
+
+
 .row input{
     margin:0px;
     padding:5px ;
