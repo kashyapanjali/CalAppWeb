@@ -1,5 +1,5 @@
 let string="";
-let exponent=null;
+// let exponent=null;
 let buttons=document.querySelectorAll('.button');
 Array.from(buttons).forEach((button)=>{
     button.addEventListener('click',(e)=>{
@@ -16,18 +16,23 @@ Array.from(buttons).forEach((button)=>{
         string = eval(string) / 100; // Convert the current expression to percentage
         document.querySelector('input').value = string;
     }
-    else if (e.target.innerHTML === '$') {
-        // Check if there is a valid expression before attempting to calculate
+      else if (e.target.innerHTML === '$') {
+      // Check if there is a valid expression before attempting to calculate
         if (string !== "") {
-            if (exponent === null) {
-                exponent = prompt("Enter the exponent value");
-            }
-            if (exponent !== null) {
-                string = Math.pow(eval(string), eval(exponent));
-                document.querySelector('input').value = string;
-            }
+          let base = eval(string);
+          let exponent = prompt("Enter the exponent value");
+          
+          // Check if exponent is a valid number
+          if (!isNaN(exponent) && exponent !== null && exponent !== "") {
+              exponent = parseFloat(exponent);
+              let result = Math.pow(base, exponent);
+              document.querySelector('input').value = result;
+              string = result.toString(); // Update the string with the result for further calculations if needed
+          } else {
+              alert("Please enter a valid number for the exponent.");
+          }
         }
-    }
+     }
       else{
         console.log(e.target)
         string=string+e.target.innerHTML;
